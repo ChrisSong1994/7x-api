@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/QuantumNous/7x-api/common"
-	"github.com/QuantumNous/7x-api/constant"
-	"github.com/QuantumNous/7x-api/dto"
+	"github.com/ChrisSong1994/7x-api/common"
+	"github.com/ChrisSong1994/7x-api/constant"
+	"github.com/ChrisSong1994/7x-api/dto"
 
 	"github.com/gin-gonic/gin"
 

@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/QuantumNous/7x-api/common"
-	"github.com/QuantumNous/7x-api/constant"
-	"github.com/QuantumNous/7x-api/logger"
-	"github.com/QuantumNous/7x-api/model"
-	relaycommon "github.com/QuantumNous/7x-api/relay/common"
-	"github.com/QuantumNous/7x-api/setting/ratio_setting"
+	"github.com/ChrisSong1994/7x-api/common"
+	"github.com/ChrisSong1994/7x-api/constant"
+	"github.com/ChrisSong1994/7x-api/logger"
+	"github.com/ChrisSong1994/7x-api/model"
+	relaycommon "github.com/ChrisSong1994/7x-api/relay/common"
+	"github.com/ChrisSong1994/7x-api/setting/ratio_setting"
 	"github.com/gin-gonic/gin"
 )
 

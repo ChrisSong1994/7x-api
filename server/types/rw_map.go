@@ -3,7 +3,7 @@ package types
 import (
 	"sync"
 
-	"github.com/QuantumNous/7x-api/common"
+	"github.com/ChrisSong1994/7x-api/common"
 )
 
 type RWMap[K comparable, V any] struct {

@@ -3,7 +3,7 @@ package dto
 import (
 	"strings"
 
-	"github.com/QuantumNous/7x-api/types"
+	"github.com/ChrisSong1994/7x-api/types"
 
 	"github.com/gin-gonic/gin"
 )

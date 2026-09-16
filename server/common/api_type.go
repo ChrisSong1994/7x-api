@@ -1,6 +1,6 @@
 package common
 
-import "github.com/QuantumNous/7x-api/constant"
+import "github.com/ChrisSong1994/7x-api/constant"
 
 func ChannelType2APIType(channelType int) (int, bool) {
 	apiType := -1

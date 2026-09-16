@@ -6,11 +6,11 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/QuantumNous/7x-api/common"
-	"github.com/QuantumNous/7x-api/logger"
-	"github.com/QuantumNous/7x-api/model"
-	relaycommon "github.com/QuantumNous/7x-api/relay/common"
-	"github.com/QuantumNous/7x-api/types"
+	"github.com/ChrisSong1994/7x-api/common"
+	"github.com/ChrisSong1994/7x-api/logger"
+	"github.com/ChrisSong1994/7x-api/model"
+	relaycommon "github.com/ChrisSong1994/7x-api/relay/common"
+	"github.com/ChrisSong1994/7x-api/types"
 
 	"github.com/bytedance/gopkg/util/gopool"
 	"github.com/gin-gonic/gin"

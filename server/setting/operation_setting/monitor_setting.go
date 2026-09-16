@@ -4,7 +4,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/QuantumNous/7x-api/setting/config"
+	"github.com/ChrisSong1994/7x-api/setting/config"
 )
 
 type MonitorSetting struct {

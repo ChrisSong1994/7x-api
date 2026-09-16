@@ -3,10 +3,10 @@ package middleware
 import (
 	"github.com/gin-gonic/gin"
 
-	"github.com/QuantumNous/7x-api/common"
-	"github.com/QuantumNous/7x-api/constant"
-	"github.com/QuantumNous/7x-api/dto"
-	"github.com/QuantumNous/7x-api/i18n"
+	"github.com/ChrisSong1994/7x-api/common"
+	"github.com/ChrisSong1994/7x-api/constant"
+	"github.com/ChrisSong1994/7x-api/dto"
+	"github.com/ChrisSong1994/7x-api/i18n"
 )
 
 // I18n middleware detects and sets the language preference for the request

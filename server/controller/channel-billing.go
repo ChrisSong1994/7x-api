@@ -9,12 +9,12 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/QuantumNous/7x-api/common"
-	"github.com/QuantumNous/7x-api/constant"
-	"github.com/QuantumNous/7x-api/model"
-	"github.com/QuantumNous/7x-api/service"
-	"github.com/QuantumNous/7x-api/setting/operation_setting"
-	"github.com/QuantumNous/7x-api/types"
+	"github.com/ChrisSong1994/7x-api/common"
+	"github.com/ChrisSong1994/7x-api/constant"
+	"github.com/ChrisSong1994/7x-api/model"
+	"github.com/ChrisSong1994/7x-api/service"
+	"github.com/ChrisSong1994/7x-api/setting/operation_setting"
+	"github.com/ChrisSong1994/7x-api/types"
 
 	"github.com/shopspring/decimal"
 

@@ -1,6 +1,6 @@
 package vertex
 
-import "github.com/QuantumNous/7x-api/common"
+import "github.com/ChrisSong1994/7x-api/common"
 
 func GetModelRegion(other string, localModelName string) string {
 	// if other is json string

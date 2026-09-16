@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/QuantumNous/7x-api/constant"
+	"github.com/ChrisSong1994/7x-api/constant"
 	"github.com/pkg/errors"
 
 	"github.com/gin-gonic/gin"

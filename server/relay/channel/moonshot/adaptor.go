@@ -6,14 +6,14 @@ import (
 	"io"
 	"net/http"
 
-	channelconstant "github.com/QuantumNous/7x-api/constant"
-	"github.com/QuantumNous/7x-api/dto"
-	"github.com/QuantumNous/7x-api/relay/channel"
-	"github.com/QuantumNous/7x-api/relay/channel/claude"
-	"github.com/QuantumNous/7x-api/relay/channel/openai"
-	relaycommon "github.com/QuantumNous/7x-api/relay/common"
-	"github.com/QuantumNous/7x-api/relay/constant"
-	"github.com/QuantumNous/7x-api/types"
+	channelconstant "github.com/ChrisSong1994/7x-api/constant"
+	"github.com/ChrisSong1994/7x-api/dto"
+	"github.com/ChrisSong1994/7x-api/relay/channel"
+	"github.com/ChrisSong1994/7x-api/relay/channel/claude"
+	"github.com/ChrisSong1994/7x-api/relay/channel/openai"
+	relaycommon "github.com/ChrisSong1994/7x-api/relay/common"
+	"github.com/ChrisSong1994/7x-api/relay/constant"
+	"github.com/ChrisSong1994/7x-api/types"
 
 	"github.com/gin-gonic/gin"
 )

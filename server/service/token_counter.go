@@ -9,12 +9,12 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/QuantumNous/7x-api/common"
-	"github.com/QuantumNous/7x-api/constant"
-	"github.com/QuantumNous/7x-api/dto"
-	relaycommon "github.com/QuantumNous/7x-api/relay/common"
-	constant2 "github.com/QuantumNous/7x-api/relay/constant"
-	"github.com/QuantumNous/7x-api/types"
+	"github.com/ChrisSong1994/7x-api/common"
+	"github.com/ChrisSong1994/7x-api/constant"
+	"github.com/ChrisSong1994/7x-api/dto"
+	relaycommon "github.com/ChrisSong1994/7x-api/relay/common"
+	constant2 "github.com/ChrisSong1994/7x-api/relay/constant"
+	"github.com/ChrisSong1994/7x-api/types"
 
 	"github.com/gin-gonic/gin"
 )

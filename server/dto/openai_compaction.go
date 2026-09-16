@@ -3,7 +3,7 @@ package dto
 import (
 	"encoding/json"
 
-	"github.com/QuantumNous/7x-api/types"
+	"github.com/ChrisSong1994/7x-api/types"
 )
 
 type OpenAIResponsesCompactionResponse struct {

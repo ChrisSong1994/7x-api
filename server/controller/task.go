@@ -3,13 +3,13 @@ package controller
 import (
 	"strconv"
 
-	"github.com/QuantumNous/7x-api/common"
-	"github.com/QuantumNous/7x-api/constant"
-	"github.com/QuantumNous/7x-api/dto"
-	"github.com/QuantumNous/7x-api/model"
-	"github.com/QuantumNous/7x-api/relay"
-	"github.com/QuantumNous/7x-api/service"
-	"github.com/QuantumNous/7x-api/types"
+	"github.com/ChrisSong1994/7x-api/common"
+	"github.com/ChrisSong1994/7x-api/constant"
+	"github.com/ChrisSong1994/7x-api/dto"
+	"github.com/ChrisSong1994/7x-api/model"
+	"github.com/ChrisSong1994/7x-api/relay"
+	"github.com/ChrisSong1994/7x-api/service"
+	"github.com/ChrisSong1994/7x-api/types"
 
 	"github.com/gin-gonic/gin"
 )

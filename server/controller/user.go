@@ -10,15 +10,15 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/QuantumNous/7x-api/common"
-	"github.com/QuantumNous/7x-api/dto"
-	"github.com/QuantumNous/7x-api/i18n"
-	"github.com/QuantumNous/7x-api/logger"
-	"github.com/QuantumNous/7x-api/model"
-	"github.com/QuantumNous/7x-api/service"
-	"github.com/QuantumNous/7x-api/setting"
+	"github.com/ChrisSong1994/7x-api/common"
+	"github.com/ChrisSong1994/7x-api/dto"
+	"github.com/ChrisSong1994/7x-api/i18n"
+	"github.com/ChrisSong1994/7x-api/logger"
+	"github.com/ChrisSong1994/7x-api/model"
+	"github.com/ChrisSong1994/7x-api/service"
+	"github.com/ChrisSong1994/7x-api/setting"
 
-	"github.com/QuantumNous/7x-api/constant"
+	"github.com/ChrisSong1994/7x-api/constant"
 
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"

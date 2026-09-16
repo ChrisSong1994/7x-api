@@ -3,7 +3,7 @@ package oauth
 import (
 	"context"
 
-	"github.com/QuantumNous/7x-api/model"
+	"github.com/ChrisSong1994/7x-api/model"
 	"github.com/gin-gonic/gin"
 )
 

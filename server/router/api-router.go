@@ -1,11 +1,11 @@
 package router
 
 import (
-	"github.com/QuantumNous/7x-api/controller"
-	"github.com/QuantumNous/7x-api/middleware"
+	"github.com/ChrisSong1994/7x-api/controller"
+	"github.com/ChrisSong1994/7x-api/middleware"
 
 	// Import oauth package to register providers via init()
-	_ "github.com/QuantumNous/7x-api/oauth"
+	_ "github.com/ChrisSong1994/7x-api/oauth"
 
 	"github.com/gin-contrib/gzip"
 	"github.com/gin-gonic/gin"

@@ -3,7 +3,7 @@ package vertex
 import (
 	"encoding/json"
 
-	"github.com/QuantumNous/7x-api/dto"
+	"github.com/ChrisSong1994/7x-api/dto"
 )
 
 type VertexAIClaudeRequest struct {

@@ -17,10 +17,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/QuantumNous/7x-api/common"
-	"github.com/QuantumNous/7x-api/dto"
-	"github.com/QuantumNous/7x-api/model"
-	"github.com/QuantumNous/7x-api/setting"
+	"github.com/ChrisSong1994/7x-api/common"
+	"github.com/ChrisSong1994/7x-api/dto"
+	"github.com/ChrisSong1994/7x-api/model"
+	"github.com/ChrisSong1994/7x-api/setting"
 )
 
 const (

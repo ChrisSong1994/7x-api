@@ -9,14 +9,14 @@ import (
 	"strings"
 	"time"
 
-	"github.com/QuantumNous/7x-api/common"
-	"github.com/QuantumNous/7x-api/constant"
-	"github.com/QuantumNous/7x-api/dto"
-	"github.com/QuantumNous/7x-api/model"
-	relaychannel "github.com/QuantumNous/7x-api/relay/channel"
-	"github.com/QuantumNous/7x-api/relay/channel/gemini"
-	"github.com/QuantumNous/7x-api/relay/channel/ollama"
-	"github.com/QuantumNous/7x-api/service"
+	"github.com/ChrisSong1994/7x-api/common"
+	"github.com/ChrisSong1994/7x-api/constant"
+	"github.com/ChrisSong1994/7x-api/dto"
+	"github.com/ChrisSong1994/7x-api/model"
+	relaychannel "github.com/ChrisSong1994/7x-api/relay/channel"
+	"github.com/ChrisSong1994/7x-api/relay/channel/gemini"
+	"github.com/ChrisSong1994/7x-api/relay/channel/ollama"
+	"github.com/ChrisSong1994/7x-api/service"
 
 	"github.com/gin-gonic/gin"
 )

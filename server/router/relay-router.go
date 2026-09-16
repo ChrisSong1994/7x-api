@@ -1,11 +1,11 @@
 package router
 
 import (
-	"github.com/QuantumNous/7x-api/constant"
-	"github.com/QuantumNous/7x-api/controller"
-	"github.com/QuantumNous/7x-api/middleware"
-	"github.com/QuantumNous/7x-api/relay"
-	"github.com/QuantumNous/7x-api/types"
+	"github.com/ChrisSong1994/7x-api/constant"
+	"github.com/ChrisSong1994/7x-api/controller"
+	"github.com/ChrisSong1994/7x-api/middleware"
+	"github.com/ChrisSong1994/7x-api/relay"
+	"github.com/ChrisSong1994/7x-api/types"
 
 	"github.com/gin-gonic/gin"
 )

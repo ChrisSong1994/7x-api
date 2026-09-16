@@ -1,7 +1,7 @@
 package ratio_setting
 
 import (
-	"github.com/QuantumNous/7x-api/types"
+	"github.com/ChrisSong1994/7x-api/types"
 )
 
 var defaultCacheRatio = map[string]float64{

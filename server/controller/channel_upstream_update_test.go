@@ -3,8 +3,8 @@ package controller
 import (
 	"testing"
 
-	"github.com/QuantumNous/7x-api/dto"
-	"github.com/QuantumNous/7x-api/model"
+	"github.com/ChrisSong1994/7x-api/dto"
+	"github.com/ChrisSong1994/7x-api/model"
 	"github.com/stretchr/testify/require"
 )
 

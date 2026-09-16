@@ -10,11 +10,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/QuantumNous/7x-api/common"
-	"github.com/QuantumNous/7x-api/constant"
-	"github.com/QuantumNous/7x-api/dto"
-	relayconstant "github.com/QuantumNous/7x-api/relay/constant"
-	"github.com/QuantumNous/7x-api/setting"
+	"github.com/ChrisSong1994/7x-api/common"
+	"github.com/ChrisSong1994/7x-api/constant"
+	"github.com/ChrisSong1994/7x-api/dto"
+	relayconstant "github.com/ChrisSong1994/7x-api/relay/constant"
+	"github.com/ChrisSong1994/7x-api/setting"
 
 	"github.com/gin-gonic/gin"
 )

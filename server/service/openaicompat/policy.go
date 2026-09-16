@@ -1,6 +1,6 @@
 package openaicompat
 
-import "github.com/QuantumNous/7x-api/setting/model_setting"
+import "github.com/ChrisSong1994/7x-api/setting/model_setting"
 
 func ShouldChatCompletionsUseResponsesPolicy(policy model_setting.ChatCompletionsToResponsesPolicy, channelID int, channelType int, model string) bool {
 	if !policy.IsChannelEnabled(channelID, channelType) {

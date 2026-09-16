@@ -7,10 +7,10 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/QuantumNous/7x-api/common"
-	"github.com/QuantumNous/7x-api/model"
-	passkeysvc "github.com/QuantumNous/7x-api/service/passkey"
-	"github.com/QuantumNous/7x-api/setting/system_setting"
+	"github.com/ChrisSong1994/7x-api/common"
+	"github.com/ChrisSong1994/7x-api/model"
+	passkeysvc "github.com/ChrisSong1994/7x-api/service/passkey"
+	"github.com/ChrisSong1994/7x-api/setting/system_setting"
 
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"

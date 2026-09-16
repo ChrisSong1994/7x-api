@@ -1,10 +1,10 @@
 package controller
 
 import (
-	"github.com/QuantumNous/7x-api/common"
-	"github.com/QuantumNous/7x-api/model"
-	"github.com/QuantumNous/7x-api/service"
-	"github.com/QuantumNous/7x-api/setting/ratio_setting"
+	"github.com/ChrisSong1994/7x-api/common"
+	"github.com/ChrisSong1994/7x-api/model"
+	"github.com/ChrisSong1994/7x-api/service"
+	"github.com/ChrisSong1994/7x-api/setting/ratio_setting"
 
 	"github.com/gin-gonic/gin"
 )

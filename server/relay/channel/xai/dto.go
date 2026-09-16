@@ -1,6 +1,6 @@
 package xai
 
-import "github.com/QuantumNous/7x-api/dto"
+import "github.com/ChrisSong1994/7x-api/dto"
 
 // ChatCompletionResponse represents the response from XAI chat completion API
 type ChatCompletionResponse struct {

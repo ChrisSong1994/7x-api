@@ -3,7 +3,7 @@ package router
 import (
 	"net/http"
 
-	"github.com/QuantumNous/7x-api/middleware"
+	"github.com/ChrisSong1994/7x-api/middleware"
 
 	"github.com/gin-gonic/gin"
 )

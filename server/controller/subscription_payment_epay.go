@@ -8,11 +8,11 @@ import (
 	"time"
 
 	"github.com/Calcium-Ion/go-epay/epay"
-	"github.com/QuantumNous/7x-api/common"
-	"github.com/QuantumNous/7x-api/model"
-	"github.com/QuantumNous/7x-api/service"
-	"github.com/QuantumNous/7x-api/setting/operation_setting"
-	"github.com/QuantumNous/7x-api/setting/system_setting"
+	"github.com/ChrisSong1994/7x-api/common"
+	"github.com/ChrisSong1994/7x-api/model"
+	"github.com/ChrisSong1994/7x-api/service"
+	"github.com/ChrisSong1994/7x-api/setting/operation_setting"
+	"github.com/ChrisSong1994/7x-api/setting/system_setting"
 	"github.com/gin-gonic/gin"
 	"github.com/samber/lo"
 )

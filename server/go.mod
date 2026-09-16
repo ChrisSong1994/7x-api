@@ -1,4 +1,4 @@
-module github.com/QuantumNous/7x-api
+module github.com/ChrisSong1994/7x-api
 
 // +heroku goVersion go1.18
 go 1.25.1

@@ -3,8 +3,8 @@ package controller
 import (
 	"strings"
 
-	"github.com/QuantumNous/7x-api/setting"
-	"github.com/QuantumNous/7x-api/setting/operation_setting"
+	"github.com/ChrisSong1994/7x-api/setting"
+	"github.com/ChrisSong1994/7x-api/setting/operation_setting"
 )
 
 func isStripeTopUpEnabled() bool {

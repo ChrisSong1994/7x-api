@@ -1,6 +1,6 @@
 package model_setting
 
-import "github.com/QuantumNous/7x-api/setting/config"
+import "github.com/ChrisSong1994/7x-api/setting/config"
 
 // GrokSettings defines Grok model configuration.
 type GrokSettings struct {

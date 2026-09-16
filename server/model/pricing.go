@@ -8,11 +8,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/QuantumNous/7x-api/common"
-	"github.com/QuantumNous/7x-api/constant"
-	"github.com/QuantumNous/7x-api/setting/billing_setting"
-	"github.com/QuantumNous/7x-api/setting/ratio_setting"
-	"github.com/QuantumNous/7x-api/types"
+	"github.com/ChrisSong1994/7x-api/common"
+	"github.com/ChrisSong1994/7x-api/constant"
+	"github.com/ChrisSong1994/7x-api/setting/billing_setting"
+	"github.com/ChrisSong1994/7x-api/setting/ratio_setting"
+	"github.com/ChrisSong1994/7x-api/types"
 )
 
 type Pricing struct {

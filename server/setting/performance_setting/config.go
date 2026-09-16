@@ -1,8 +1,8 @@
 package performance_setting
 
 import (
-	"github.com/QuantumNous/7x-api/common"
-	"github.com/QuantumNous/7x-api/setting/config"
+	"github.com/ChrisSong1994/7x-api/common"
+	"github.com/ChrisSong1994/7x-api/setting/config"
 )
 
 // PerformanceSetting 性能设置配置

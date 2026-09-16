@@ -5,9 +5,9 @@ import (
 	"strconv"
 	"unicode/utf8"
 
-	"github.com/QuantumNous/7x-api/common"
-	"github.com/QuantumNous/7x-api/i18n"
-	"github.com/QuantumNous/7x-api/model"
+	"github.com/ChrisSong1994/7x-api/common"
+	"github.com/ChrisSong1994/7x-api/i18n"
+	"github.com/ChrisSong1994/7x-api/model"
 
 	"github.com/gin-gonic/gin"
 )

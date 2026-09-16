@@ -1,6 +1,6 @@
 package system_setting
 
-import "github.com/QuantumNous/7x-api/setting/config"
+import "github.com/ChrisSong1994/7x-api/setting/config"
 
 type FetchSetting struct {
 	EnableSSRFProtection   bool     `json:"enable_ssrf_protection"` // 是否启用SSRF防护

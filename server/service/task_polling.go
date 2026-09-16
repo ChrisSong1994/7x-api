@@ -10,13 +10,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/QuantumNous/7x-api/common"
-	"github.com/QuantumNous/7x-api/constant"
-	"github.com/QuantumNous/7x-api/dto"
-	"github.com/QuantumNous/7x-api/logger"
-	"github.com/QuantumNous/7x-api/model"
-	"github.com/QuantumNous/7x-api/relay/channel/task/taskcommon"
-	relaycommon "github.com/QuantumNous/7x-api/relay/common"
+	"github.com/ChrisSong1994/7x-api/common"
+	"github.com/ChrisSong1994/7x-api/constant"
+	"github.com/ChrisSong1994/7x-api/dto"
+	"github.com/ChrisSong1994/7x-api/logger"
+	"github.com/ChrisSong1994/7x-api/model"
+	"github.com/ChrisSong1994/7x-api/relay/channel/task/taskcommon"
+	relaycommon "github.com/ChrisSong1994/7x-api/relay/common"
 
 	"github.com/samber/lo"
 )

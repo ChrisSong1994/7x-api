@@ -1,6 +1,6 @@
 package common
 
-import "github.com/QuantumNous/7x-api/constant"
+import "github.com/ChrisSong1994/7x-api/constant"
 
 // EndpointInfo 描述单个端点的默认请求信息
 // path: 上游路径

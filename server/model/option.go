@@ -5,13 +5,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/QuantumNous/7x-api/common"
-	"github.com/QuantumNous/7x-api/setting"
-	"github.com/QuantumNous/7x-api/setting/config"
-	"github.com/QuantumNous/7x-api/setting/operation_setting"
-	"github.com/QuantumNous/7x-api/setting/performance_setting"
-	"github.com/QuantumNous/7x-api/setting/ratio_setting"
-	"github.com/QuantumNous/7x-api/setting/system_setting"
+	"github.com/ChrisSong1994/7x-api/common"
+	"github.com/ChrisSong1994/7x-api/setting"
+	"github.com/ChrisSong1994/7x-api/setting/config"
+	"github.com/ChrisSong1994/7x-api/setting/operation_setting"
+	"github.com/ChrisSong1994/7x-api/setting/performance_setting"
+	"github.com/ChrisSong1994/7x-api/setting/ratio_setting"
+	"github.com/ChrisSong1994/7x-api/setting/system_setting"
 )
 
 type Option struct {

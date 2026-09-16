@@ -6,11 +6,11 @@ import (
 	"reflect"
 	"testing"
 
-	common2 "github.com/QuantumNous/7x-api/common"
-	"github.com/QuantumNous/7x-api/types"
+	common2 "github.com/ChrisSong1994/7x-api/common"
+	"github.com/ChrisSong1994/7x-api/types"
 
-	"github.com/QuantumNous/7x-api/dto"
-	"github.com/QuantumNous/7x-api/setting/model_setting"
+	"github.com/ChrisSong1994/7x-api/dto"
+	"github.com/ChrisSong1994/7x-api/setting/model_setting"
 	"github.com/samber/lo"
 )
 

@@ -9,9 +9,9 @@ package router
 // 	"net/http"
 // 	"strings"
 //
-// 	"github.com/QuantumNous/7x-api/common"
-// 	"github.com/QuantumNous/7x-api/controller"
-// 	"github.com/QuantumNous/7x-api/middleware"
+// 	"github.com/ChrisSong1994/7x-api/common"
+// 	"github.com/ChrisSong1994/7x-api/controller"
+// 	"github.com/ChrisSong1994/7x-api/middleware"
 // 	"github.com/gin-contrib/gzip"
 // 	"github.com/gin-contrib/static"
 // 	"github.com/gin-gonic/gin"

@@ -3,7 +3,7 @@ package common
 import (
 	"testing"
 
-	"github.com/QuantumNous/7x-api/types"
+	"github.com/ChrisSong1994/7x-api/types"
 	"github.com/stretchr/testify/require"
 )
 

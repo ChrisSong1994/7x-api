@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/QuantumNous/7x-api/dto"
-	"github.com/QuantumNous/7x-api/relay/common"
-	relayconstant "github.com/QuantumNous/7x-api/relay/constant"
-	"github.com/QuantumNous/7x-api/setting/ratio_setting"
+	"github.com/ChrisSong1994/7x-api/dto"
+	"github.com/ChrisSong1994/7x-api/relay/common"
+	relayconstant "github.com/ChrisSong1994/7x-api/relay/constant"
+	"github.com/ChrisSong1994/7x-api/setting/ratio_setting"
 	"github.com/gin-gonic/gin"
 )
 

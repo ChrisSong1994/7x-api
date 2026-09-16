@@ -7,11 +7,11 @@ import (
 	"math"
 	"strings"
 
-	"github.com/QuantumNous/7x-api/common"
-	"github.com/QuantumNous/7x-api/dto"
-	"github.com/QuantumNous/7x-api/logger"
-	relayconstant "github.com/QuantumNous/7x-api/relay/constant"
-	"github.com/QuantumNous/7x-api/types"
+	"github.com/ChrisSong1994/7x-api/common"
+	"github.com/ChrisSong1994/7x-api/dto"
+	"github.com/ChrisSong1994/7x-api/logger"
+	relayconstant "github.com/ChrisSong1994/7x-api/relay/constant"
+	"github.com/ChrisSong1994/7x-api/types"
 	"github.com/samber/lo"
 
 	"github.com/gin-gonic/gin"

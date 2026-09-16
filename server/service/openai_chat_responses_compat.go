@@ -1,8 +1,8 @@
 package service
 
 import (
-	"github.com/QuantumNous/7x-api/dto"
-	"github.com/QuantumNous/7x-api/service/openaicompat"
+	"github.com/ChrisSong1994/7x-api/dto"
+	"github.com/ChrisSong1994/7x-api/service/openaicompat"
 )
 
 func ChatCompletionsRequestToResponsesRequest(req *dto.GeneralOpenAIRequest) (*dto.OpenAIResponsesRequest, error) {

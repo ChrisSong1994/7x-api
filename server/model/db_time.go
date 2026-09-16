@@ -1,6 +1,6 @@
 package model
 
-import "github.com/QuantumNous/7x-api/common"
+import "github.com/ChrisSong1994/7x-api/common"
 
 // GetDBTimestamp returns a UNIX timestamp from database time.
 // Falls back to application time on error.
