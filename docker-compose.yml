@@ -1,12 +1,11 @@
 # 7X-API Docker Compose Configuration
 #
 # Quick Start:
-#   1. docker-compose up -d
+#   1. docker compose up -d --build
 #   2. Access at http://localhost (port 80)
 #
 # Architecture:
-#   - website: Nginx serving frontend + reverse proxy to backend
-#   - server: Go backend API
+#   - app: Nginx + frontend + Go backend in one image
 #   - postgres: PostgreSQL database
 #   - redis: Redis cache
 #
@@ -21,29 +20,17 @@
 version: '3.4' # For compatibility with older Docker versions
 
 services:
-  website:
+  app:
     build:
       context: .
-      dockerfile: docker/Dockerfile.website
-    container_name: 7x-api-website
+      dockerfile: docker/Dockerfile
+    image: 7x-api:local
+    container_name: 7x-api
     restart: always
     ports:
       - "80:80"
-    depends_on:
-      - server
-    networks:
-      - 7x-api-network
-
-  server:
-    build:
-      context: .
-      dockerfile: docker/Dockerfile.server
-    container_name: 7x-api-server
-    restart: always
-    ports:
-      - "3000:3000"
     volumes:
-      - ./data:/data
+      - ./data:/app/data
       - ./logs:/app/logs
     environment:
       - SQL_DSN=postgresql://root:123456@postgres:5432/7x-api # ⚠️ IMPORTANT: Change the password in production!
@@ -62,11 +49,6 @@ services:
 #      - mysql  # Uncomment if using MySQL
     networks:
       - 7x-api-network
-    healthcheck:
-      test: ["CMD-SHELL", "wget -q -O - http://localhost:3000/api/status | grep -o '\"success\":\\s*true' || exit 1"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
 
   redis:
     image: redis:latest

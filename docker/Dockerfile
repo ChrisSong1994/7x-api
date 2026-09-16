@@ -1,9 +1,11 @@
 # ============================================================
 # 7x-api 单镜像构建（前端 + Go 后端 + Nginx 合一）
-# 参考 WizBuildC：本地构建，无远程镜像仓库依赖
 #
-# 构建（默认 linux/amd64）：
-#   docker build --platform linux/amd64 -t chrissong1994/7x-api:latest -f docker/Dockerfile.single .
+# 构建：
+#   docker build -t chrissong1994/7x-api:latest -f docker/Dockerfile .
+#
+# 构建开发用后端镜像（只到 builder-server 阶段）：
+#   docker build --target builder-server -t 7x-api-dev:local -f docker/Dockerfile .
 #
 # 运行（需要外部 PostgreSQL + Redis）：
 #   docker run -d -p 80:80 \
@@ -54,7 +56,7 @@ COPY website/ .
 ENV NODE_OPTIONS=--max-old-space-size=4096
 RUN pnpm run build
 
-# ─── Stage 3: 运行环境（Nginx + Go 二进制，单进程容器）───
+# ─── Stage 3: 运行环境（Nginx + Go 二进制，单容器）───
 FROM alpine:3.21
 
 ENV TZ=Asia/Shanghai
@@ -80,7 +82,7 @@ COPY --from=builder-server /server /app/server
 COPY --from=builder-web /app/dist /app/frontend/dist
 
 # Nginx 配置（反代到容器内 127.0.0.1:3000）
-COPY docker/nginx-single.conf /etc/nginx/http.d/default.conf
+COPY docker/nginx.conf /etc/nginx/http.d/default.conf
 
 # 数据目录（SQLite / 日志），运行时挂载卷即可持久化
 RUN mkdir -p /app/logs /app/data && chmod 777 /app/logs /app/data

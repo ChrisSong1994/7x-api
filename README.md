@@ -20,27 +20,33 @@ AI Gateway 是一个大语言模型统一 API 网关，将多个上游 AI 服务
 
 ### Docker Compose（推荐）
 
+前后端使用同一个 Docker 镜像构建和运行，Nginx 在容器内同时提供前端静态资源、反向代理和后端 API 服务。
+
 ```bash
 # 克隆项目
 git clone <your-repo-url>
 cd my-7x-api
 
-# 启动服务
-docker-compose up -d
+# 构建并启动前后端合一的应用服务及依赖
+docker compose up -d --build
 ```
+
+部署完成后，访问 `http://localhost` 即可使用。
 
 ### Docker 命令
 
 ```bash
-# 使用 SQLite（默认）
-docker run --name ai-gateway -d --restart always \
-  -p 3000:3000 \
-  -e TZ=Asia/Shanghai \
-  -v ./data:/data \
-  <your-image>:latest
-```
+# 构建前后端合一的镜像
+docker build -t 7x-api:latest -f docker/Dockerfile .
 
-部署完成后，访问 `http://localhost:3000` 即可使用。
+# 使用 SQLite（默认），运行前后端合一的服务
+docker run --name 7x-api -d --restart always \
+  -p 80:80 \
+  -e TZ=Asia/Shanghai \
+  -v ./data:/app/data \
+  -v ./logs:/app/logs \
+  7x-api:latest
+```
 
 ## 主要特性
 

@@ -43,9 +43,8 @@ website/              — Frontend (React SPA)
   vite.config.ts      — Build configuration
 
 docker/               — Docker configuration
-  Dockerfile.server   — Backend Dockerfile
-  Dockerfile.website  — Frontend Dockerfile (Nginx)
-  nginx.conf          — Nginx configuration
+  Dockerfile          — Combined image (frontend + backend + Nginx)
+  nginx.conf          — Nginx configuration (reverse proxies to local backend)
 
 docker-compose.yml    — Production deployment
 docker-compose.dev.yml — Local development
@@ -164,13 +163,12 @@ make dev-web
 make dev
 ```
 
-Frontend runs at `localhost:3001`, backend at `localhost:3000`. The frontend dev server proxies API requests to the backend.
+Frontend dev server runs at `localhost:3001`, backend at `localhost:3000` (Vite proxies API requests to the backend).
 
 ### Production Deployment
 
 ```bash
-docker compose up -d
+docker compose up -d --build
 ```
 
-- Frontend: `localhost:80` (Nginx)
-- Backend: `localhost:3000` (API)
+- Production app: `localhost:80` (single image: Nginx + frontend + backend)
