@@ -1,7 +1,7 @@
 WEBSITE_DIR = ./website
 SERVER_DIR = ./server
 
-DOCKER_IMAGE ?= 7x-api
+DOCKER_IMAGE ?= chrissong1994/7x-api
 DOCKER_TAG ?= latest
 DOCKERFILE ?= docker/Dockerfile
 DOCKER_PLATFORM ?=
@@ -51,14 +51,15 @@ build: build-frontend
 
 # Docker 构建（生产，前后端合一）
 # 默认构建当前平台镜像: make docker-build
-# 指定镜像名和标签: make docker-build DOCKER_IMAGE=chrissong1994/7x-api DOCKER_TAG=v1.0.0
+# 指定标签: make docker-build DOCKER_TAG=v1.0.0
+# 覆盖镜像名: make docker-build DOCKER_IMAGE=<registry>/<image>
 # 指定目标平台: make docker-build DOCKER_PLATFORM=linux/amd64
 docker-build:
 	@echo "Building Docker image $(DOCKER_IMAGE):$(DOCKER_TAG)..."
 	@docker build $(if $(strip $(DOCKER_PLATFORM)),--platform $(DOCKER_PLATFORM),) -t $(DOCKER_IMAGE):$(DOCKER_TAG) -f $(DOCKERFILE) .
 
 # Docker 多架构构建并推送（需要先 docker login）
-# 用法: make docker-buildx DOCKER_IMAGE=chrissong1994/7x-api DOCKER_TAG=v1.0.0
+# 用法: make docker-buildx DOCKER_TAG=v1.0.0
 docker-buildx:
 	@echo "Building and pushing multi-arch Docker image $(DOCKER_IMAGE):$(DOCKER_TAG) ($(DOCKER_PLATFORMS))..."
 	@docker buildx build --platform $(DOCKER_PLATFORMS) -t $(DOCKER_IMAGE):$(DOCKER_TAG) -f $(DOCKERFILE) --push .

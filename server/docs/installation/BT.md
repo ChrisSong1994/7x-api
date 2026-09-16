@@ -57,7 +57,7 @@
 version: '3'
 services:
   7x-api:
-    image: calciumion/7x-api:latest
+    image: chrissong1994/7x-api:latest
     container_name: 7x-api
     restart: always
     ports:
@@ -126,7 +126,7 @@ volumes:
 
 ```bash
 # 拉取最新镜像
-docker pull calciumion/7x-api:latest
+docker pull chrissong1994/7x-api:latest
 
 # 重启容器
 docker-compose down && docker-compose up -d

@@ -37,7 +37,7 @@ docker compose up -d --build
 
 ```bash
 # 构建前后端合一的镜像
-docker build -t 7x-api:latest -f docker/Dockerfile .
+docker build -t chrissong1994/7x-api:latest -f docker/Dockerfile .
 
 # 使用 SQLite（默认），运行前后端合一的服务
 docker run --name 7x-api -d --restart always \
@@ -45,7 +45,7 @@ docker run --name 7x-api -d --restart always \
   -e TZ=Asia/Shanghai \
   -v ./data:/app/data \
   -v ./logs:/app/logs \
-  7x-api:latest
+  chrissong1994/7x-api:latest
 ```
 
 ## 主要特性

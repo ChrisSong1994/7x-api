@@ -24,7 +24,7 @@ services:
     build:
       context: .
       dockerfile: docker/Dockerfile
-    image: 7x-api:local
+    image: chrissong1994/7x-api:latest
     container_name: 7x-api
     restart: always
     ports:
