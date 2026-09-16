@@ -1,0 +1,24 @@
+export function sendToFluent(apiKey: string, serverAddress?: string): boolean {
+  if (typeof window === 'undefined') {
+    return false
+  }
+
+  const container = document.getElementById('fluent-7x-api-container')
+  if (!container) {
+    return false
+  }
+
+  const payload = {
+    id: '7x-api',
+    baseUrl: serverAddress || window.location.origin,
+    apiKey: `sk-${apiKey}`,
+  }
+
+  container.dispatchEvent(
+    new CustomEvent('fluent:prefill', {
+      detail: payload,
+    })
+  )
+
+  return true
+}

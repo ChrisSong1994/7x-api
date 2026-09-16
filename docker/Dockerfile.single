@@ -1,0 +1,104 @@
+# ============================================================
+# 7x-api 单镜像构建（前端 + Go 后端 + Nginx 合一）
+# 参考 WizBuildC：本地构建，无远程镜像仓库依赖
+#
+# 构建（默认 linux/amd64）：
+#   docker build --platform linux/amd64 -t chrissong1994/7x-api:latest -f docker/Dockerfile.single .
+#
+# 运行（需要外部 PostgreSQL + Redis）：
+#   docker run -d -p 80:80 \
+#     -e SQL_DSN=postgresql://root:123456@host:5432/7x-api \
+#     -e REDIS_CONN_STRING=redis://:123456@host:6379 \
+#     chrissong1994/7x-api:latest
+# ============================================================
+
+# ─── Stage 1: 构建后端（BUILDPLATFORM 原生执行 + Go 交叉编译，避免 QEMU 慢）───
+FROM --platform=$BUILDPLATFORM golang:1.25-alpine AS builder-server
+
+ARG TARGETOS
+ARG TARGETARCH
+
+WORKDIR /app
+
+RUN apk add --no-cache git ca-certificates tzdata
+
+# 先复制清单文件（利用 Docker 缓存层）
+COPY server/go.mod server/go.sum ./
+# 容器内无法访问 proxy.golang.org，使用国内 Go 模块代理
+ENV GOPROXY=https://goproxy.cn,direct
+RUN go mod download
+
+# 复制源代码并构建
+COPY server/ .
+RUN CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH \
+    go build -ldflags="-s -w" -o /server .
+
+# ─── Stage 2: 构建前端（BUILDPLATFORM 原生执行，产物为平台无关静态资源）───
+FROM --platform=$BUILDPLATFORM node:24-alpine AS builder-web
+
+RUN corepack enable
+
+# 容器内无法访问 registry.npmjs.org，使用国内镜像
+ENV COREPACK_NPM_REGISTRY=https://registry.npmmirror.com
+
+WORKDIR /app
+
+# 先复制依赖清单（利用 Docker 缓存层）
+COPY website/package.json website/pnpm-lock.yaml website/pnpm-workspace.yaml ./
+
+RUN pnpm install --frozen-lockfile --registry=https://registry.npmmirror.com
+
+# 复制源代码并构建
+COPY website/ .
+# 加大 Vite 构建堆内存，避免大依赖 OOM
+ENV NODE_OPTIONS=--max-old-space-size=4096
+RUN pnpm run build
+
+# ─── Stage 3: 运行环境（Nginx + Go 二进制，单进程容器）───
+FROM alpine:3.21
+
+ENV TZ=Asia/Shanghai
+
+# 系统依赖：
+#   nginx  前端静态文件 + 反向代理
+#   tini   PID 1（转发信号、回收僵尸进程）
+#   tzdata 时区数据
+#   wget   容器健康检查（busybox 自带，显式声明保险）
+RUN apk add --no-cache \
+    nginx \
+    tini \
+    tzdata \
+    ca-certificates \
+    wget
+
+WORKDIR /app
+
+# 后端二进制（CGO_ENABLED=0 静态编译，无运行时依赖）
+COPY --from=builder-server /server /app/server
+
+# 前端构建产物
+COPY --from=builder-web /app/dist /app/frontend/dist
+
+# Nginx 配置（反代到容器内 127.0.0.1:3000）
+COPY docker/nginx-single.conf /etc/nginx/http.d/default.conf
+
+# 数据目录（SQLite / 日志），运行时挂载卷即可持久化
+RUN mkdir -p /app/logs /app/data && chmod 777 /app/logs /app/data
+
+# 启动脚本（Go 后端为主进程 + Nginx 优雅停机）
+COPY docker/start.sh /app/start.sh
+RUN chmod +x /app/start.sh
+
+# 端口：
+#   80   入口（Nginx 静态资源 + 反代 /api /v1 /mj /pg /ws 到后端）
+#   3000 后端直连（仅调试用，正常走 80 即可）
+EXPOSE 80 3000
+
+# 健康检查：经 Nginx 访问后端 /api/status
+HEALTHCHECK --interval=30s --timeout=10s --start-period=15s --retries=3 \
+    CMD wget -q -O /dev/null http://127.0.0.1:80/api/status || exit 1
+
+# tini 作 PID 1：转发信号给 start.sh，回收僵尸进程
+ENTRYPOINT ["/sbin/tini", "--"]
+
+CMD ["/app/start.sh"]

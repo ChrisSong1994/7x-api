@@ -1,0 +1,40 @@
+# 后端 Dockerfile - 不再构建前端
+FROM golang:1.22-alpine AS builder
+
+WORKDIR /app
+
+# 安装构建依赖
+RUN apk add --no-cache git ca-certificates tzdata
+
+# 复制 go.mod 和 go.sum
+COPY server/go.mod server/go.sum ./
+RUN go mod download
+
+# 复制源代码
+COPY server/ .
+
+# 构建
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o server .
+
+# 运行阶段
+FROM debian:bookworm-slim
+
+WORKDIR /app
+
+# 安装运行时依赖
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    tzdata \
+    && rm -rf /var/lib/apt/lists/*
+
+# 复制构建产物
+COPY --from=builder /app/server .
+COPY --from=builder /usr/share/zoneinfo /usr/share/zoneinfo
+COPY --from=builder /etc/ssl/certs /etc/ssl/certs
+
+# 设置时区
+ENV TZ=Asia/Shanghai
+
+EXPOSE 3000
+
+CMD ["./server"]

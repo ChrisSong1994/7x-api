@@ -1,0 +1,42 @@
+# Git
+.github
+.git
+.gitignore
+
+# Documentation
+*.md
+docs
+
+# IDE
+.vscode
+.idea
+
+# Build artifacts
+.eslintcache
+.gocache
+
+# Frontend
+website/node_modules
+website/dist
+
+# Backend
+server/.gocache
+
+# Logs
+logs
+*.log
+
+# Data
+data
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Docker
+docker-compose*.yml
+
+# Misc
+.DS_Store
+Thumbs.db
